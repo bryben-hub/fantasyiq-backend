@@ -433,8 +433,8 @@ def demo_trade_analysis():
         "trade_details": demo_trade
     }
     
-    
+    return analysis
 
-    }if __name__ == "__main__":
+if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 8000)))
