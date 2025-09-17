@@ -433,24 +433,8 @@ def demo_trade_analysis():
         "trade_details": demo_trade
     }
     
-    return analysis
-@app.get("/demo/trade")
-def demo_trade_analysis():
-    """Demo trade for showcasing the tool"""
     
-    return {
-        "recommendation": "ACCEPT",
-        "confidence": 87,
-        "reasoning": "Ja'Marr Chase's youth (24) and elite WR1 ceiling outweigh Kelce's aging curve (35). The 2025 1st is valuable, but Chase provides 5+ years of WR1 production vs. Kelce's 2-3 years of declining TE1 value.",
-        "trade_details": {
-            "give": ["Travis Kelce", "2025 1st Round Pick"],
-            "receive": ["Ja'Marr Chase"]
-        },
-        "value_analysis": {
-            "current_value_difference": "+15%",
-            "long_term_outlook": "Positive", 
-            "risk_level": "Low"
-        }
+
     }if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 8000)))
