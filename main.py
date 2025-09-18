@@ -432,6 +432,8 @@ def demo_trade_analysis():
         },
         "trade_details": demo_trade
     }
+
+
     
     return analysis
 # ... lots of other code ...
