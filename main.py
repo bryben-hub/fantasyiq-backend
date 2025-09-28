@@ -1,4 +1,4 @@
-# main.py - FantasyIQ Pro Backend
+# main.py - FantasyIQ Pro Backend - FIXED VERSION
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -412,35 +412,7 @@ def get_trending_players():
 
 @app.get("/demo/trade")
 def demo_trade_analysis():
-    """Demo trade for showcasing the tool"""
-    
-    demo_trade = {
-        "give_players": ["Travis Kelce", "2025 1st Round Pick"],
-        "receive_players": ["Ja'Marr Chase"],
-        "league_type": "dynasty"
-    }
-    
-    analysis = {
-        "recommendation": "ACCEPT",
-        "confidence": 87,
-        "reasoning": "Ja'Marr Chase's youth (24) and elite WR1 ceiling outweigh Kelce's aging curve (35). The 2025 1st is valuable, but Chase provides 5+ years of WR1 production vs. Kelce's 2-3 years of declining TE1 value.",
-        "value_analysis": {
-            "current_value_difference": "+15%",
-            "projected_2027_difference": "+35%", 
-            "risk_level": "Low",
-            "age_advantage": "Chase: 24 vs Kelce: 35"
-        },
-        "trade_details": demo_trade
-    }
-
-
-    
-    return analysis
-# ... lots of other code ...
-
-@app.get("/demo/trade")
-def demo_trade_analysis():
-    """Demo trade for showcasing the tool"""
+    """Demo trade for showcasing the tool - FIXED VERSION"""
     
     return {
         "recommendation": "ACCEPT",
@@ -448,18 +420,18 @@ def demo_trade_analysis():
         "reasoning": "Ja'Marr Chase's youth (24) and elite WR1 ceiling outweigh Kelce's aging curve (35). The 2025 1st is valuable, but Chase provides 5+ years of WR1 production vs. Kelce's 2-3 years of declining TE1 value.",
         "trade_details": {
             "give": ["Travis Kelce", "2025 1st Round Pick"],
-            "receive": ["Ja'Marr Chase"]
+            "receive": ["Ja'Marr Chase"],
+            "league_type": "dynasty"
         },
         "value_analysis": {
             "current_value_difference": "+15%",
-            "long_term_outlook": "Positive", 
-            "risk_level": "Low"
-        }
+            "projected_2027_difference": "+35%", 
+            "risk_level": "Low",
+            "age_advantage": "Chase: 24 vs Kelce: 35"
+        },
+        "timestamp": datetime.now().isoformat()
     }
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 8000)))
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 8000)))
+    uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 8000))))))
